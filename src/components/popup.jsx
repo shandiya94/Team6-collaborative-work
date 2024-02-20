@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 const Popup = ({ cardData, onClose }) => {
   const [isPopupOpen, setPopupOpen] = useState(true);
@@ -24,11 +23,6 @@ const Popup = ({ cardData, onClose }) => {
       </div>
     </div>
   );
-};
-
-Popup.propTypes = {
-  cardData: PropTypes.object, // Make cardData optional
-  onClose: PropTypes.func,
 };
 
 export default Popup;

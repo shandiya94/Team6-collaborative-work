@@ -28,11 +28,6 @@ const CardItem = () => {
           <div className='card-body'>
             <h5 className='card-title'>{item.strMeal}</h5>
           </div>
-          <div className='card-footer'>
-            <a href='#' className='btn btn-primary'>
-              Add to Cart
-            </a>
-          </div>
         </div>
       ))}
       {selectedCard && <Popup cardData={selectedCard} onClose={closePopup} />}
