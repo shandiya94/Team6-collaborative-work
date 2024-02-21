@@ -39,9 +39,7 @@ const CardItem = () => {
                 cuisine you'll definitely enjoy. Explore the flavors and enjoy
                 your cooking!
                 <br />
-                <a href='#' className='stretched-link'>
-                  Click to view recipe
-                </a>
+                <a href='#'>Click to view recipe</a>
               </p>
             </div>
           </div>
