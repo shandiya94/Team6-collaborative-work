@@ -16,16 +16,34 @@ const CardItem = () => {
   }
 
   return (
-    <div className='card-container justify-content-center d-flex flex-wrap'>
+    <div className='container mt-3'>
       {food.map((item) => (
-        <div
-          key={item.idMeal}
-          className='card m-2'
-          style={{ maxWidth: '14rem' }}
-        >
-          <img src={item.strMealThumb} className='card-img-top' alt='...' />
-          <div className='card-body'>
-            <h5 className='card-title'>{item.strMeal}</h5>
+        <div key={item.idMeal} className='row justify-content-center mb-5 g-0'>
+          <div className='col-md-5'>
+            <img
+              src={item.strMealThumb}
+              className='img-fluid'
+              alt={item.strMeal}
+              style={{ maxHeight: '500px', objectFit: 'cover', width: '100%' }}
+            />
+          </div>
+          <div className='col-md-7 d-flex align-items-center'>
+            <div className='ms-3'>
+              <h3 className='card-title'>{item.strMeal}</h3>
+              <p className='card-text lh-lg'>
+                Category: {item.strCategory}
+                <br />
+                Cuisine: {item.strArea}
+                <br />
+                This is a delicious {item.strCategory} meal from {item.strArea}{' '}
+                cuisine you'll definitely enjoy. Explore the flavors and enjoy
+                your cooking!
+                <br />
+                <a href='#' className='stretched-link'>
+                  Click to view recipe
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       ))}
