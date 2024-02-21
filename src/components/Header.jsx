@@ -12,10 +12,10 @@ const Header = () => {
   const [foodSearch, setFoodSearch] = useState('');
   const { toggleSubscribe } = useContext(subscribeContext);
 
-  function handleCategorySelect(category) {
+  const handleCategorySelect = (category) => {
     fetchProduct(category);
     setCategory(category);
-  }
+  };
 
   const handleInputChange = (e) => {
     setFoodSearch(e.target.value);
@@ -23,7 +23,7 @@ const Header = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    fetchProduct(foodSearch, '');
+    fetchProduct(foodSearch); // Pass the search input to fetchProduct
   };
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -33,11 +33,11 @@ const Header = () => {
   return (
     <nav className={`navbar navbar-expand-lg ${bgColorclassName}`}>
       <div className='container-fluid'>
-        <a className='navbar-brand' href='#'>
-          Foodie
-        </a>
+        <Link className='navbar-brand' to='/'>
+          LOGO
+        </Link>
         <button
-          className='navbar-toggler '
+          className='navbar-toggler'
           type='button'
           data-bs-toggle='collapse'
           data-bs-target='#navbarSupportedContent'
@@ -50,19 +50,19 @@ const Header = () => {
 
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-            <li className='nav-item '>
-              <a className='nav-link active' aria-current='page' href='/'>
+            <li className='nav-item'>
+              <Link to='/' className='nav-link active' aria-current='page'>
                 Home
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/about' className='nav-link active' aria-current='page'>
-                About
+              <Link to='/RecipeIndexPage' className='nav-link'>
+                Recipe Index
               </Link>
             </li>
           </ul>
 
-          <div className='p-2 mx-4 '>
+          <div className='p-2 mx-4'>
             {darkMode ? (
               <BsBrightnessHigh className='text-light' onClick={handleToggle} />
             ) : (
