@@ -2,8 +2,10 @@ import Header from './components/Header';
 import { ThemeContext } from './Hooks/themeContext';
 import { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RecipeIndexPage from './pages/RecipeIndexPage';
+import RecipePage from './pages/RecipePage';
 import HomePage from './pages/HomePage';
-import Popup from './components/popup';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -16,7 +18,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/popup' element={<Popup />} />
+          <Route path='/RecipeIndexPage' element={<RecipeIndexPage />} />
+          <Route path='/RecipePage/:id' element={<RecipePage />} />
         </Routes>
       </div>
     </Router>
