@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
-import CardItem from '../components/cardItem';
-import { foodContext } from '../Hooks/foodContext';
+import CardItem from '../components/CardItem';
+import { foodContext } from '../hooks/foodContext';
 
 const HomePage = () => {
   const { food } = useContext(foodContext);
