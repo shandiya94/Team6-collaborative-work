@@ -1,10 +1,7 @@
-import { useState, useEffect, useContext } from 'react';
-import CardItem from '../components/cardItem';
-import { foodContext } from '../Hooks/foodContext';
+import React from 'react';
 
 const HomePage = () => {
-  const { food } = useContext(foodContext);
-  return <CardItem food={food} />;
+  return <div>HomePage</div>;
 };
 
 export default HomePage;
