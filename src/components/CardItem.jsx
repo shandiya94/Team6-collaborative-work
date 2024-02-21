@@ -4,6 +4,16 @@ import { foodContext } from '../hooks/foodContext';
 const CardItem = () => {
   const { food } = useContext(foodContext);
   const [selectedCard, setSelectedCard] = useState(null);
+  if (!food || !Array.isArray(food)) {
+    return (
+      <div
+        className=' justify-content-center d-flex text-xxl bg-white align-items-center text-secondary'
+        style={{ height: '100vh' }}
+      >
+        <h2 className='text-center'>Sorry! No meals found.</h2>
+      </div>
+    );
+  }
 
   return (
     <div className='card-container justify-content-center d-flex flex-wrap'>
