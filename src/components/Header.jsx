@@ -9,11 +9,9 @@ import { foodContext } from '../hooks/foodContext';
 const Header = () => {
   const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);
 
-  const { setCategory, fetchProduct } = useContext(foodContext);
+  const { fetchProduct, setSearchInput } = useContext(foodContext);
   const [foodSearch, setFoodSearch] = useState('');
   const { toggleSubscribe } = useContext(subscribeContext);
-
-  const { fetchProduct, setSearchInput } = useContext(foodContext);
 
   const handleInputChange = (e) => {
     setSearchInput(e.target.value);
@@ -23,7 +21,7 @@ const Header = () => {
     e.preventDefault();
     fetchProduct(foodSearch); // Pass the search input to fetchProduct
   };
-  
+
   const handleSubscribe = (e) => {
     e.preventDefault();
     toggleSubscribe();
