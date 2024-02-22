@@ -1,6 +1,39 @@
 import MainContent from '../components/MainContent';
+import foodBackground from '../assets/foodBackground.jpg';
 
 const HomePage = () => {
-  return <MainContent />;
+  return (
+    <div>
+      <section id='top' className={`container col-xxl-16 px-4`}>
+        <div className='row flex-lg-row justify-content-evenly align-items-center g-5 py-1'>
+          <div className='col-10 col-sm-8 col-lg-6'>
+            <img
+              src={foodBackground}
+              className='d-block mx-lg-auto img-fluid'
+              alt='Bootstrap Themes'
+              width={700}
+              height={500}
+              loading='lazy'
+            />
+          </div>
+          <div className='col-lg-6'>
+            <h1 className='display-5 fw-bold text-body-emphasis lh-1 mb-3'>
+              Welcome to Hungry Chef
+            </h1>
+            <p className='lead' style={{ color: '#4c723b' }}>
+              Your ultimate destination for easy and delicious recipes from
+              around the globe! Whether you're a seasoned chef or a novice in
+              the kitchen, our app is your go-to resource for satisfying your
+              culinary cravings.
+            </p>
+            <p style={{ color: '#4c723b' }}>Check out our new recipes!</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <MainContent />
+      </section>
+    </div>
+  );
 };
 export default HomePage;
