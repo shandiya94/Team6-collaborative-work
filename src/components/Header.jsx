@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   const handleInputChange = (e) => {
-    setFoodSearch(e.target.value);
+    setSearchInput(e.target.value);
   };
 
   const handleSearch = (e) => {
@@ -56,7 +56,7 @@ const Header = () => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/RecipeIndexPage' className='nav-link'>
+              <Link to='/RecipeIndexPage' className='nav-link active'>
                 Recipe Index
               </Link>
             </li>

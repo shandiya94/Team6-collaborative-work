@@ -6,7 +6,8 @@ const RecipeIndexPage = () => {
   const { food, fetchProduct } = useContext(foodContext);
 
   useEffect(() => {
-    fetchProduct('');
+    // Fetch all data when the component mounts
+    fetchProduct('', '');
   }, [fetchProduct]);
 
   return <MainContent food={food} />;
