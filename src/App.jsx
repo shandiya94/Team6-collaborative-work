@@ -8,6 +8,7 @@ import RecipeIndexPage from './pages/RecipeIndexPage';
 import AboutPage from './pages/AboutPage';
 import Footer from './components/Footer';
 import CookieSettingsPage from './pages/CookieSettingsPage';
+import HomePage from './pages/HomePage';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';

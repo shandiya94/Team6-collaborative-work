@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { foodContext } from '../Hooks/foodContext';
+import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
 const CardItem = () => {
