@@ -56,7 +56,7 @@ const Header = () => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/RecipeIndexPage' className='nav-link active'>
+              <Link to='/recipeIndex' className='nav-link'>
                 Recipe Index
               </Link>
             </li>
