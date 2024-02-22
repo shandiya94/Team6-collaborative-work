@@ -7,21 +7,15 @@ import { foodContext } from '../Hooks/foodContext';
 
 const Header = () => {
   const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);
-  const { setCategory, fetchProduct } = useContext(foodContext);
-  const [foodSearch, setFoodSearch] = useState('');
-
-  const handleCategorySelect = (category) => {
-    fetchProduct(category);
-    setCategory(category);
-  };
+  const { fetchProduct, setSearchInput } = useContext(foodContext);
 
   const handleInputChange = (e) => {
-    setFoodSearch(e.target.value);
+    setSearchInput(e.target.value);
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    fetchProduct(foodSearch); // Pass the search input to fetchProduct
+    fetchProduct(setSearchInput); // Pass the search input to fetchProduct
   };
 
   return (
@@ -50,7 +44,7 @@ const Header = () => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/RecipeIndexPage' className='nav-link'>
+              <Link to='/RecipeIndexPage' className='nav-link active'>
                 Recipe Index
               </Link>
             </li>
