@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import 'bootswatch/dist/minty/bootstrap.min.css';
+import 'bootswatch/dist/cerulean/bootstrap.min.css';
 import SubscribeProvider from './hooks/subscribeContext.jsx';
-
-import './index.css';
-
 import ThemeProvider from './hooks/themeContext.jsx';
 import FoodProvider from './hooks/foodContext.jsx';
 

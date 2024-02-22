@@ -56,9 +56,9 @@ const Header = () => {
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='#'>
+              <Link to='/about' className='nav-link active' aria-current='page'>
                 About
-              </a>
+              </Link>
             </li>
           </ul>
 
