@@ -27,7 +27,7 @@ const FoodProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchProduct(); // Initial fetch on component mount
+    fetchProduct('', ''); // Initial fetch on component mount
   }, [searchInput]);
 
   return (

@@ -7,7 +7,7 @@ const RecipeIndexPage = () => {
 
   useEffect(() => {
     // Fetch all data when the component mounts
-    fetchProduct('');
+    fetchProduct('', '');
   }, [fetchProduct]);
 
   return <CardItem food={food} />;
