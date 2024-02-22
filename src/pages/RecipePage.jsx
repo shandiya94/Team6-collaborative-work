@@ -6,6 +6,7 @@ const RecipePage = () => {
   const { id } = useParams();
   const { getFoodById } = useContext(foodContext);
 
+
   const selectedRecipe = getFoodById(id);
 
   if (!selectedRecipe) {
@@ -86,6 +87,7 @@ const RecipePage = () => {
             {strInstructions}
           </p>
         </div>
+
       </div>
     </div>
   );

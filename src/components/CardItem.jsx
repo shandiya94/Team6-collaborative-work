@@ -1,33 +1,21 @@
 import React, { useContext, useState } from 'react';
-import { foodContext } from '../hooks/foodContext';
+import { foodContext } from '../Hooks/foodContext';
+import { Link } from 'react-router-dom';
 
 const CardItem = () => {
   const { food } = useContext(foodContext);
-  const [selectedCard, setSelectedCard] = useState(null);
-  if (!food || !Array.isArray(food)) {
-    return (
-      <div
-        className=' justify-content-center d-flex text-xxl bg-white align-items-center text-secondary'
-        style={{ height: '100vh' }}
-      >
-        <h2 className='text-center'>Sorry! No meals found.</h2>
-      </div>
-    );
-  }
 
   return (
     <div className='card-container justify-content-center d-flex flex-wrap'>
       {food.map((item) => (
-        <div
-          key={item.idMeal}
-          className='card m-2'
-          style={{ maxWidth: '14rem' }}
-        >
-          <img src={item.strMealThumb} className='card-img-top' alt='...' />
-          <div className='card-body'>
-            <h5 className='card-title'>{item.strMeal}</h5>
+        <Link to={`/RecipePage/${item.idMeal}`} key={item.idMeal}>
+          <div className='card m-2' style={{ maxWidth: '14rem' }}>
+            <img src={item.strMealThumb} className='card-img-top' alt='...' />
+            <div className='card-body'>
+              <h5 className='card-title'>{item.strMeal}</h5>
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
