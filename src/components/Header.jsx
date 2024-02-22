@@ -1,12 +1,18 @@
 import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
-import { ThemeContext } from '../Hooks/themeContext';
+import { ThemeContext } from '../hooks/themeContext';
 import { useContext, useState } from 'react';
+import { subscribeContext } from '../hooks/subscribeContext';
 import { Link } from 'react-router-dom';
 
-import { foodContext } from '../Hooks/foodContext';
+import { foodContext } from '../hooks/foodContext';
 
 const Header = () => {
   const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);
+
+  const { setCategory, fetchProduct } = useContext(foodContext);
+  const [foodSearch, setFoodSearch] = useState('');
+  const { toggleSubscribe } = useContext(subscribeContext);
+
   const { fetchProduct, setSearchInput } = useContext(foodContext);
 
   const handleInputChange = (e) => {
@@ -15,6 +21,12 @@ const Header = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    fetchProduct(foodSearch); // Pass the search input to fetchProduct
+  };
+  
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    toggleSubscribe();
     fetchProduct(setSearchInput); // Pass the search input to fetchProduct
   };
 
@@ -44,7 +56,7 @@ const Header = () => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/RecipeIndexPage' className='nav-link active'>
+              <Link to='/recipeIndex' className='nav-link'>
                 Recipe Index
               </Link>
             </li>
@@ -72,6 +84,13 @@ const Header = () => {
               type='submit'
             >
               Search
+            </button>
+            <button
+              onClick={handleSubscribe}
+              className='btn btn-outline-success p-2 ms-4'
+              type='submit'
+            >
+              subscribe
             </button>
           </form>
         </div>
