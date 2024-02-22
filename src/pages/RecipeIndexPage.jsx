@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import CardItem from '../components/cardItem';
-import { foodContext } from '../Hooks/foodContext';
+import { foodContext } from '../hooks/foodContext';
 
 const RecipeIndexPage = () => {
   const { food, fetchProduct } = useContext(foodContext);
