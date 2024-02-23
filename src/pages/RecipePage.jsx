@@ -1,6 +1,6 @@
 import { useContext, lazy } from 'react';
 import { useParams } from 'react-router-dom';
-import { foodContext } from '../temper/foodContext';
+import { foodContext } from '../hooks/foodContext';
 
 const RecipePage = () => {
   const { id } = useParams();

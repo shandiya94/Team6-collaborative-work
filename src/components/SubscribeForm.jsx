@@ -1,8 +1,8 @@
 import { Form, Button } from 'react-bootstrap';
 import { Formik } from 'formik';
 import { useContext } from 'react';
-import { ThemeContext } from '../temper/themeContext';
-import { subscribeContext } from '../temper/subscribeContext';
+import { ThemeContext } from '../hooks/themeContext';
+import { subscribeContext } from '../hooks/subscribeContext';
 import * as Yup from 'yup';
 
 // Schema for yup

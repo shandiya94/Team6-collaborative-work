@@ -1,5 +1,5 @@
 import { useContext, lazy, Suspense } from 'react';
-import { foodContext } from '../temper/foodContext';
+import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
 const CardItem = () => {

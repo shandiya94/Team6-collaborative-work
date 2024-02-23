@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ThemeContext } from '../temper/themeContext';
+import { ThemeContext } from '../hooks/themeContext';
 
 const Footer = () => {
   let { bgColorClass, textColorClass } = useContext(ThemeContext);
