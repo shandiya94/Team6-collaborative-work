@@ -3,14 +3,14 @@ import CardItem from '../components/cardItem';
 import { foodContext } from '../hooks/foodContext';
 
 const RecipeIndexPage = () => {
-  const { food, fetchProduct } = useContext(foodContext);
+  const { fetchProduct } = useContext(foodContext);
 
   useEffect(() => {
     // Fetch all data when the component mounts
-    fetchProduct('', '');
+    fetchProduct('');
   }, [fetchProduct]);
 
-  return <CardItem food={food} />;
+  return <CardItem />;
 };
 
 export default RecipeIndexPage;

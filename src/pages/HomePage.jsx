@@ -26,11 +26,14 @@ const HomePage = () => {
               the kitchen, our app is your go-to resource for satisfying your
               culinary cravings.
             </p>
-            <p style={{ color: '#4c723b' }}>Check out our new recipes!</p>
+            <a href='#recipe' className=' px-4 me-md-2'>
+              Check out our new recipes!
+            </a>
+            {/* <p style={{ color: '#4c723b' }}>Check out our new recipes!</p> */}
           </div>
         </div>
       </section>
-      <section>
+      <section id='recipe'>
         <MainContent />
       </section>
     </div>

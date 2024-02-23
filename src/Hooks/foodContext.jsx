@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 export const foodContext = createContext();
 
@@ -22,13 +22,13 @@ const FoodProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    fetchProduct();
+  }, [searchInput]);
+
   const getFoodById = (id) => {
     return food.find((item) => item.idMeal === id);
   };
-
-  useEffect(() => {
-    fetchProduct('', ''); // Initial fetch on component mount
-  }, [searchInput]);
 
   return (
     <foodContext.Provider

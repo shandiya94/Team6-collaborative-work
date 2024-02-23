@@ -83,7 +83,7 @@ const Footer = () => {
           <div className='d-flex justify-content-between w-100'>
             <div className='col'>
               <p className='text-body-secondary' style={{ fontSize: 'larger' }}>
-                HUNGRY CHIEF TEAM 6
+                TEAM 6
               </p>
             </div>
             <div className='col mb-3'>

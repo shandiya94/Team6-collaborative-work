@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const MainContent = () => {
   const { food } = useContext(foodContext);
 
-  const uniqueFood = Array.from(new Set(food.map((item) => item.idMeal))).map(
+  const uniqueFood = Array.from(new Set(food?.map((item) => item.idMeal))).map(
     (idMeal) => food.find((item) => item.idMeal === idMeal)
   );
 
@@ -22,6 +22,10 @@ const MainContent = () => {
 
   return (
     <div>
+      <hr
+        className='featurette-divider'
+        style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
+      />
       <div
         id='myCarousel'
         className='carousel slide mb-6 my-5'
