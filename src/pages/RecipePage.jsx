@@ -1,4 +1,4 @@
-import { useContext, lazy } from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
 
@@ -46,7 +46,6 @@ const RecipePage = () => {
                 objectFit: 'contain',
                 maxHeight: '400px',
               }}
-              loading='lazy'
             />
           </div>
           <div className='col-md-6'>

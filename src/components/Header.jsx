@@ -1,6 +1,6 @@
 import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
 import { ThemeContext } from '../hooks/themeContext';
-import { useContext, useState, useEffect, lazy, Suspense } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { subscribeContext } from '../hooks/subscribeContext';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/Hungry chef (3).png';
