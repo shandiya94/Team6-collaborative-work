@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage';
 import RecipePage from './pages/RecipePage';
 import RecipeIndexPage from './pages/RecipeIndexPage';
-import AboutPage from './pages/AboutPage';
 import Footer from './components/Footer';
 import CookieSettingsPage from './pages/CookieSettingsPage';
 import HomePage from './pages/HomePage';
@@ -27,7 +26,6 @@ const App = () => {
           <Route path='/recipeIndex' element={<RecipeIndexPage />} />
           <Route path='/recipe/:id' element={<RecipePage />} />
           <Route path='*' element={<NotFoundPage />} />
-          <Route path='/about' element={<AboutPage />} />
           <Route path='cookesettings' element={<CookieSettingsPage />} />
         </Routes>
         <Footer />

@@ -9,7 +9,7 @@ import { foodContext } from '../hooks/foodContext';
 const Header = () => {
   const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);
 
-  const { fetchProduct, setSearchInput } = useContext(foodContext);
+  const { setSearchInput } = useContext(foodContext);
   const [foodSearch, setFoodSearch] = useState('');
   const { toggleSubscribe } = useContext(subscribeContext);
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,8 @@ const MainContent = () => {
   const uniqueFood = Array.from(new Set(food?.map((item) => item.idMeal))).map(
     (idMeal) => food.find((item) => item.idMeal === idMeal)
   );
+
+  // const uniqueFood = food;
 
   if (!uniqueFood || uniqueFood.length === 0) {
     return (
