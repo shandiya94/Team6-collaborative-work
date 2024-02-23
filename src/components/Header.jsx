@@ -53,86 +53,88 @@ const Header = () => {
   }, []);
 
   return (
-    <nav
-      className={`navbar fixed-top navbar-expand-lg  ${bgColorclassName}`}
-      style={{ width: '100%', height: '150px', backgroundColor: '#fff2d5' }}
-    >
-      <div className='container-fluid d-flex justify-content-between'>
-        <Link className='navbar-brand ' to='/'>
-          <h1>Hungry Chef</h1>
-        </Link>
-        <div>
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarSupportedContent'
-            aria-controls='navbarSupportedContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-          <div className='nav-item'>
-            <div
-              className='collapse navbar-collapse'
-              id='navbarSupportedContent'
+    <header className={`mb-4 fixed-top ${bgColorclassName}`}>
+      <nav
+        className='navbar navbar-expand-lg'
+        style={{ width: '100%', backgroundColor: '#fff2d5' }}
+      >
+        <div className='container-fluid d-flex justify-content-between'>
+          <Link className='navbar-brand ' to='/'>
+            <h1>Hungry Chef</h1>
+          </Link>
+          <div>
+            <button
+              className='navbar-toggler'
+              type='button'
+              data-bs-toggle='collapse'
+              data-bs-target='#navbarSupportedContent'
+              aria-controls='navbarSupportedContent'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
             >
-              <ul className='navbar-nav '>
-                <li>
-                  <Link to='/' className='nav-link '>
-                    <button className='btn btn-success'>Home</button>
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/recipeIndex' className='nav-link'>
-                    <button className='btn btn-success'>Recipes</button>
-                  </Link>
-                </li>
-              </ul>
-              <button
-                onClick={handleSubscribe}
-                className=' btn btn-success mr-5 '
-                type='submit'
+              <span className='navbar-toggler-icon'></span>
+            </button>
+            <div className='nav-item'>
+              <div
+                className='collapse navbar-collapse'
+                id='navbarSupportedContent'
               >
-                subscribe
-              </button>
-
-              <form className='d-flex align-items-center' role='search'>
-                <input
-                  className='form-control me-2'
-                  type='search'
-                  placeholder='Search'
-                  aria-label='Search'
-                  id='searchInput'
-                  onChange={handleInputChange}
-                  autoComplete='off'
-                  style={{ maxWidth: '120px' }}
-                />
+                <ul className='navbar-nav '>
+                  <li>
+                    <Link to='/' className='nav-link '>
+                      <button className='btn btn-success'>Home</button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/recipeIndex' className='nav-link'>
+                      <button className='btn btn-success'>Recipes</button>
+                    </Link>
+                  </li>
+                </ul>
                 <button
-                  onClick={handleSearch}
-                  className='btn btn-success'
+                  onClick={handleSubscribe}
+                  className=' btn btn-success mr-5 '
                   type='submit'
                 >
-                  Search
+                  subscribe
                 </button>
-              </form>
 
-              <div className='d-md-block d-none px-3'>
-                {darkMode ? (
-                  <BsBrightnessHigh
-                    className='text-success'
-                    onClick={handleToggle}
+                <form className='d-flex align-items-center' role='search'>
+                  <input
+                    className='form-control me-2'
+                    type='search'
+                    placeholder='Search'
+                    aria-label='Search'
+                    id='searchInput'
+                    onChange={handleInputChange}
+                    autoComplete='off'
+                    style={{ maxWidth: '120px' }}
                   />
-                ) : (
-                  <BsFillMoonFill onClick={handleToggle} />
-                )}
+                  <button
+                    onClick={handleSearch}
+                    className='btn btn-success'
+                    type='submit'
+                  >
+                    Search
+                  </button>
+                </form>
+
+                <div className='d-md-block d-none px-3'>
+                  {darkMode ? (
+                    <BsBrightnessHigh
+                      className='text-success'
+                      onClick={handleToggle}
+                    />
+                  ) : (
+                    <BsFillMoonFill onClick={handleToggle} />
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

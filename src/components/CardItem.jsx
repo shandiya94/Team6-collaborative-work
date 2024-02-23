@@ -17,7 +17,7 @@ const CardItem = () => {
   }
 
   return (
-    <div className='m-80'>
+    <div className='m-80 py-5 mt-5'>
       <div className='card-container justify-content-center d-flex flex-wrap '>
         {food.map((item) => (
           <Link to={`/recipe/${item.idMeal}`} key={item.idMeal}>

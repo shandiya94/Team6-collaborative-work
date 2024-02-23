@@ -32,7 +32,7 @@ const RecipePage = () => {
   }
 
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='d-flex justify-content-center py-5 mt-5'>
       <div className='card mb-3' style={{ maxWidth: '840px', width: '100%' }}>
         <div className='row g-0'>
           <div className='col-md-6'>

@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
@@ -39,14 +39,7 @@ const CarouselItem = React.memo(({ item, index }) => (
 const MainContent = () => {
   const { food } = useContext(foodContext);
 
-  const uniqueFood = useMemo(() => {
-    if (!food) return [];
-    return Array.from(new Set(food?.map((item) => item.idMeal))).map((idMeal) =>
-      food.find((item) => item.idMeal === idMeal)
-    );
-  }, [food]);
-
-  if (!uniqueFood || uniqueFood.length === 0) {
+  if (!food || food.length === 0) {
     return (
       <div
         className='d-flex justify-content-center align-items-center text-xxl bg-white'
@@ -69,7 +62,7 @@ const MainContent = () => {
         data-bs-ride='carousel'
       >
         <div className='carousel-indicators'>
-          {uniqueFood.map((_, index) => (
+          {food.map((_, index) => (
             <button
               key={index}
               type='button'
@@ -81,7 +74,7 @@ const MainContent = () => {
           ))}
         </div>
         <div className='carousel-inner'>
-          {uniqueFood.map((item, index) => (
+          {food.map((item, index) => (
             <CarouselItem key={item.idMeal} item={item} index={index} />
           ))}
         </div>
@@ -115,8 +108,85 @@ const MainContent = () => {
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
       />
       <div className='container marketing'>
-        {/* ... rest of your component */}
-      </div>
+        <div className='row m-5'>
+          {food.slice(3, 6).map((item) => (
+            <div
+              key={item.idMeal}
+              className='col-lg-4 justify-content-center align-items-center text-center'
+            >
+              <img
+                src={item.strMealThumb}
+                className='bd-placeholder-img rounded-circle my-3 shadow-lg'
+                width='200'
+                height='200'
+                alt={item.strMeal}
+                loading='lazy'
+              />
+              <h2 className='fw-normal my-3'>{item.strMeal}</h2>
+              <p className='my-3 text-muted'>
+                Discover the taste of {item.strArea} cuisine with our{' '}
+                {item.strCategory} recipe, {item.strMeal}. Perfect for any
+                occasion!
+              </p>
+              <p>
+                <Link
+                  to={`/recipe/${item.idMeal}`}
+                  className='text-primary'
+                  style={{ textDecoration: 'underline' }}
+                >
+                  Discover More »
+                </Link>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <hr
+          className='featurette-divider'
+          style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
+        />
+
+        {food.slice(6, 9).map((item, index) => (
+          <div
+            key={item.idMeal}
+            className={`row featurette ${
+              index % 2 === 0 ? '' : 'flex-row-reverse'
+            } align-items-center justify-content-center`}
+          >
+            <div className='col-md-7'>
+              <h2 className='featurette-heading'>{item.strMeal} </h2>
+              <h3>
+                <span className='text-muted'>{item.strArea} Cuisine.</span>
+              </h3>
+              <p className='text-muted'>
+                {`${item.strInstructions.slice(0, 400)} ... `}
+                <Link
+                  to={`/recipe/${item.idMeal}`}
+                  className='text-primary'
+                  style={{ textDecoration: 'underline' }}
+                >
+                  Learn More
+                </Link>
+              </p>
+            </div>
+            <div className='col-md-5 my-5'>
+              <img
+                src={item.strMealThumb}
+                className='bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto'
+                width='500'
+                height='500'
+                alt={item.strMeal}
+                style={{ objectFit: 'cover' }}
+                loading='lazy'
+              />
+            </div>
+            {/* <hr
+              className='featurette-divider'
+              style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
+            /> */}
+          </div>
+        ))}
+      </div>{' '}
     </div>
   );
 };
