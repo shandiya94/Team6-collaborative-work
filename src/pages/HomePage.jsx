@@ -1,4 +1,3 @@
-import { lazy } from 'react';
 import MainContent from '../components/MainContent';
 import foodBackground from '../assets/foodBackground.webp';
 

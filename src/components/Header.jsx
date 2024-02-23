@@ -59,19 +59,7 @@ const Header = () => {
     >
       <div className='container-fluid d-flex justify-content-between'>
         <Link className='navbar-brand ' to='/'>
-          <img
-            className='flex-shrink-1'
-            style={{
-              height: '50%',
-              width: '50%',
-              backgroundColor: '#fff2d5',
-              borderRadius: '50%',
-              ...dynamicStyle,
-            }}
-            src={logo}
-            alt='Hungry Chef Logo'
-            loading='lazy'
-          />
+          <h1>Hungry Chef</h1>
         </Link>
         <div>
           <button
