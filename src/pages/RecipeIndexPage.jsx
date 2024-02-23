@@ -1,6 +1,8 @@
-import { useEffect, useContext } from 'react';
-import CardItem from '../components/CardItem';
+import { useEffect, useContext, lazy, Suspense } from 'react';
+// import CardItem from '../components/CardItem';
 import { foodContext } from '../hooks/foodContext';
+
+const CardItem = lazy(() => import('../components/CardItem'));
 
 const RecipeIndexPage = () => {
   const { fetchProduct } = useContext(foodContext);
@@ -10,7 +12,11 @@ const RecipeIndexPage = () => {
     fetchProduct();
   }, [fetchProduct]);
 
-  return <CardItem />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CardItem />
+    </Suspense>
+  );
 };
 
 export default RecipeIndexPage;
