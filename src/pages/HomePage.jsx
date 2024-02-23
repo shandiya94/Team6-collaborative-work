@@ -13,7 +13,6 @@ const HomePage = () => {
               alt='Bootstrap Themes'
               width={700}
               height={500}
-              loading='lazy'
             />
           </div>
           <div className='col-lg-6'>

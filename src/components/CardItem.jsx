@@ -1,4 +1,4 @@
-import { useContext, lazy, Suspense } from 'react';
+import { useContext } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
@@ -22,12 +22,7 @@ const CardItem = () => {
         {food.map((item) => (
           <Link to={`/recipe/${item.idMeal}`} key={item.idMeal}>
             <div className='card m-2' style={{ maxWidth: '14rem' }}>
-              <img
-                src={item.strMealThumb}
-                className='card-img-top'
-                alt='...'
-                loading='lazy'
-              />
+              <img src={item.strMealThumb} className='card-img-top' alt='...' />
               <div className='card-body'>
                 <h5 className='card-title'>{item.strMeal}</h5>
               </div>
