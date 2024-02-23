@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, lazy } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
@@ -61,6 +61,7 @@ const MainContent = () => {
                     maxWidth: '100%',
                     objectFit: 'cover',
                   }}
+                  loading='lazy'
                 />
                 <div className='ms-5' style={{ width: '50%' }}>
                   <h1 className='display-4 fst-italic'>{item.strMeal}</h1>
@@ -123,6 +124,7 @@ const MainContent = () => {
                 width='200'
                 height='200'
                 alt={item.strMeal}
+                loading='lazy'
               />
               <h2 className='fw-normal my-3'>{item.strMeal}</h2>
               <p className='my-3 text-muted'>
@@ -179,6 +181,7 @@ const MainContent = () => {
                 height='500'
                 alt={item.strMeal}
                 style={{ objectFit: 'cover' }}
+                loading='lazy'
               />
             </div>
             {/* <hr

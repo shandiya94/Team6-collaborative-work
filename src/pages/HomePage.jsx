@@ -1,5 +1,6 @@
+import { lazy } from 'react';
 import MainContent from '../components/MainContent';
-import foodBackground from '../assets/foodBackground.jpg';
+import foodBackground from '../assets/foodBackground.webp';
 
 const HomePage = () => {
   return (
@@ -29,7 +30,6 @@ const HomePage = () => {
             <a href='#recipe' className=' px-4 me-md-2'>
               Check out our new recipes!
             </a>
-            {/* <p style={{ color: '#4c723b' }}>Check out our new recipes!</p> */}
           </div>
         </div>
       </section>
