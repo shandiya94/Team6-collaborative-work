@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import CardItem from '../components/cardItem';
 import { foodContext } from '../hooks/foodContext';
 
@@ -7,7 +7,7 @@ const RecipeIndexPage = () => {
 
   useEffect(() => {
     // Fetch all data when the component mounts
-    fetchProduct('');
+    fetchProduct();
   }, [fetchProduct]);
 
   return <CardItem />;

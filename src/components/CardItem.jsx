@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const CardItem = () => {
     <div className='m-80'>
       <div className='card-container justify-content-center d-flex flex-wrap '>
         {food.map((item) => (
-          <Link to={`/RecipePage/${item.idMeal}`} key={item.idMeal}>
+          <Link to={`/recipe/${item.idMeal}`} key={item.idMeal}>
             <div className='card m-2' style={{ maxWidth: '14rem' }}>
               <img src={item.strMealThumb} className='card-img-top' alt='...' />
               <div className='card-body'>

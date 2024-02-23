@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
 
@@ -57,14 +57,14 @@ const RecipePage = () => {
               <p className='card-text'>
                 <strong>Area:</strong> {strArea}
               </p>
-              <p className='card-text'>
+              <div className='card-text'>
                 <strong>Ingredients:</strong>
                 <ul>
                   {ingredients.map((ingredient, index) => (
                     <li key={index}>{ingredient}</li>
                   ))}
                 </ul>
-              </p>
+              </div>
               {strYoutube && (
                 <p className='card-text'>
                   <a
