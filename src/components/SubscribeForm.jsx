@@ -26,6 +26,8 @@ const SubscribeForm = () => {
     <div
       className={`container  p-4 ${bgColorClass} shadow`}
       style={{ width: '20rem' }}
+      role='form'
+      aria-label='Subscription Form'
     >
       <Formik
         initialValues={{ name: '', email: '', subscribe: false }}

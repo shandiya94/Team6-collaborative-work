@@ -7,7 +7,7 @@ const Footer = () => {
   let { bgColorClass, textColorClass } = useContext(ThemeContext);
 
   return (
-    <div className={bgColorClass}>
+    <footer className={bgColorClass}>
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
           <div className='col mb-3'>
@@ -17,6 +17,7 @@ const Footer = () => {
                 <Link
                   to='/cookesettings'
                   className='nav-link p-0 text-body-secondary'
+                  aria-label='Go to Cookie Settings'
                 >
                   Cookie settings
                 </Link>
@@ -57,6 +58,7 @@ const Footer = () => {
                 <a
                   href='https://github.com/shandiya94/Team6-collaborative-work/tree/main'
                   className='nav-link p-0 text-body-secondary'
+                  aria-label='Visit our Github page'
                 >
                   Github
                 </a>
@@ -102,7 +104,7 @@ const Footer = () => {
           </div>
         </footer>
       </div>
-    </div>
+    </footer>
   );
 };
 

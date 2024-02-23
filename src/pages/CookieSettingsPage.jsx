@@ -15,15 +15,19 @@ const CookieSettingsPage = () => {
   };
 
   return (
-    <div className='container my-5'>
+    <div className='container my-5' role='main'>
       <h1>Privacy & Cookie Policy</h1>
-
+      <section>
       <p>
         Thank you for visiting our website. This Privacy and Cookie Policy
         outlines how we collect, use, and protect any information you provide to
         us, as well as the use of cookies on our website.
       </p>
-      <h1>Information We Collect</h1>
+      <h2>Information We Collect</h2>
+
+      </section>
+
+      <section>
       <p>
         When you visit our website, we may collect certain information about
         your visit, including but not limited to your IP address, browser type,
@@ -31,7 +35,7 @@ const CookieSettingsPage = () => {
         collect personal information that you voluntarily provide to us, such as
         your name, email address, or any other contact details.
       </p>
-      <h1>Use of Cookies</h1>
+      <h2>Use of Cookies</h2>
       <p>
         Our website uses cookies to enhance your browsing experience and provide
         personalized content. Cookies are small text files that are stored on
@@ -44,13 +48,23 @@ const CookieSettingsPage = () => {
         <button
           onClick={() => handleSave(true)}
           className='btn btn-success me-2'
+          aria-label='Enable Cookies'
         >
           Enable Cookies
         </button>
-        <button onClick={() => handleSave(false)} className='btn btn-danger'>
+        <button 
+        onClick={() => handleSave(false)} 
+        className='btn btn-danger'
+        aria-label='Disable Cookies'
+        >
           Disable Cookies
         </button>
       </div>
+
+      </section>
+
+      
+      
     </div>
   );
 };

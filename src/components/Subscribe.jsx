@@ -34,6 +34,8 @@ const Subscribe = () => {
       ref={subscribeRef}
       className={`position-fixed shadow end-0 ${bgColorClass} ${textColorClass}`}
       style={{ ...subscribeStyle, zIndex: 1050 }}
+      role='complementary'
+      aria-label='Subscription Form'
     >
       <SubscribeForm />
     </div>

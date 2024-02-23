@@ -10,7 +10,7 @@ const HomePage = () => {
             <img
               src={foodBackground}
               className='d-block mx-lg-auto img-fluid'
-              alt='Bootstrap Themes'
+              alt='Welcome to Hungry Chef - Delicious Food'
               width={700}
               height={500}
               loading='lazy'
@@ -26,7 +26,7 @@ const HomePage = () => {
               the kitchen, our app is your go-to resource for satisfying your
               culinary cravings.
             </p>
-            <a href='#recipe' className=' px-4 me-md-2'>
+            <a href='#recipe' className=' px-4 me-md-2' aria-label='Check out our new recipes'>
               Check out our new recipes!
             </a>
             {/* <p style={{ color: '#4c723b' }}>Check out our new recipes!</p> */}

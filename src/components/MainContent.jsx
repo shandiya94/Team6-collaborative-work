@@ -23,7 +23,7 @@ const MainContent = () => {
   }
 
   return (
-    <div>
+    <section>
       <hr
         className='featurette-divider'
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
@@ -47,7 +47,7 @@ const MainContent = () => {
         </div>
         <div className='carousel-inner'>
           {uniqueFood.map((item, index) => (
-            <div
+            <article
               key={item.idMeal}
               className={`carousel-item ${index === 0 ? 'active' : ''}`}
             >
@@ -78,7 +78,7 @@ const MainContent = () => {
                   <Link to={`/recipe/${item.idMeal}`}>View Recipe</Link>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
         <button
@@ -188,7 +188,7 @@ const MainContent = () => {
           </div>
         ))}
       </div>{' '}
-    </div>
+    </section>
   );
 };
 

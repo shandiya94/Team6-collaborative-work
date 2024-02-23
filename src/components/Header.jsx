@@ -91,14 +91,23 @@ const Header = () => {
             >
               <ul className='navbar-nav '>
                 <li>
-                  <Link to='/' className='nav-link '>
-                    <button className='btn btn-success'>Home</button>
-                  </Link>
+                  
+                    <button className='btn btn-success'>
+                      <Link to='/' className='nav-link '>
+
+                      Home
+                      </Link>
+                    </button>
+                  
                 </li>
                 <li>
+                <button className='btn btn-success'>
                   <Link to='/recipeIndex' className='nav-link'>
-                    <button className='btn btn-success'>Recipes</button>
+                    
+                      Recipes
+                      
                   </Link>
+                  </button>
                 </li>
               </ul>
               <button
