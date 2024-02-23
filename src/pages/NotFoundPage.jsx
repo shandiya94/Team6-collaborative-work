@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext } from '../hooks/themeContext';
+import { ThemeContext } from '../temper/themeContext';
 
 const NotFoundPage = () => {
   const { textColorClass } = useContext(ThemeContext);

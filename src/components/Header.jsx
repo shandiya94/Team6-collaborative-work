@@ -1,10 +1,10 @@
 import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
-import { ThemeContext } from '../hooks/themeContext';
+import { ThemeContext } from '../temper/themeContext';
 import { useContext, useState, useEffect, lazy, Suspense } from 'react';
-import { subscribeContext } from '../hooks/subscribeContext';
+import { subscribeContext } from '../temper/subscribeContext';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/Hungry chef (3).png';
-import { foodContext } from '../hooks/foodContext';
+import { foodContext } from '../temper/foodContext';
 
 const Header = () => {
   const { darkMode, handleToggle, bgColorclassName } = useContext(ThemeContext);

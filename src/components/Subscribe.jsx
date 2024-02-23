@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
-import { ThemeContext } from '../hooks/themeContext';
+import { ThemeContext } from '../temper/themeContext';
 
-import { subscribeContext } from '../hooks/subscribeContext';
+import { subscribeContext } from '../temper/subscribeContext';
 import SubscribeForm from './SubscribeForm';
 
 const Subscribe = () => {

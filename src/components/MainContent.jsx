@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { foodContext } from '../hooks/foodContext';
+import { foodContext } from '../temper/foodContext';
 import { Link } from 'react-router-dom';
 
 const CarouselItem = React.memo(({ item, index }) => (

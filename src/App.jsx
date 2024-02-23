@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import { ThemeContext } from './hooks/themeContext';
+import { ThemeContext } from './temper/themeContext';
 import { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage';
