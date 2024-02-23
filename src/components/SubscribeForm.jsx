@@ -60,7 +60,7 @@ const SubscribeForm = () => {
               controlId='formName'
               className={`mb-3 ${textColorClass}`}
             >
-              <Form.Label>Name:</Form.Label>
+              <Form.Label className='text-body-secondary'>Name:</Form.Label>
               <Form.Control
                 type='text'
                 name='name'
@@ -82,7 +82,7 @@ const SubscribeForm = () => {
               controlId='formEmail'
               className={`mb-3 ${textColorClass}`}
             >
-              <Form.Label>Email:</Form.Label>
+              <Form.Label className='text-body-secondary'>Email:</Form.Label>
               <Form.Control
                 type='text'
                 name='email'
@@ -107,13 +107,13 @@ const SubscribeForm = () => {
                 checked={values.subscribe}
                 className={`${
                   touched.subscribe && errors.subscribe ? 'is-invalid' : ''
-                }`}
+                } text-body-secondary`}
               />
             </Form.Group>
 
             <Button
               className={`mx-4 ${textColorClass}`}
-              variant='primary'
+              variant='success'
               type='submit'
               disabled={isSubmitting}
               style={{ marginTop: '1em' }}
@@ -122,7 +122,7 @@ const SubscribeForm = () => {
             </Button>
             <Button
               className={`mx-4  ${textColorClass}`}
-              variant='primary'
+              variant='success'
               type='close'
               style={{ marginTop: '1em' }}
               onClick={toggleSubscribe}
