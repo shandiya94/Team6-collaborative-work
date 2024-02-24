@@ -7,7 +7,7 @@ const Footer = () => {
   let { bgColorClass, textColorClass } = useContext(ThemeContext);
 
   return (
-    <div className={bgColorClass}>
+    <div>
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
           <div className='col mb-3'>
