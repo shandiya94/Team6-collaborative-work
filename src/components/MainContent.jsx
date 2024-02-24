@@ -1,39 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { foodContext } from '../hooks/foodContext';
 import { Link } from 'react-router-dom';
-
-const CarouselItem = React.memo(({ item, index }) => (
-  <div
-    className={`carousel-item ${index === 0 ? 'active' : ''}`}
-    key={item.idMeal}
-  >
-    <div className='container d-flex justify-content-between align-items-center'>
-      <img
-        src={item.strMealThumb}
-        className='d-block shadow-lg'
-        alt={item.strMeal}
-        style={{
-          maxHeight: '450px',
-          maxWidth: '100%',
-          objectFit: 'cover',
-        }}
-      />
-      <div className='ms-5' style={{ width: '50%' }}>
-        <h1 className='display-4 fst-italic'>{item.strMeal}</h1>
-        <p className='text-muted' style={{ fontSize: '1.5rem' }}>
-          <strong>Feast on the Flavors:</strong> Dive into the heart of{' '}
-          {item.strCategory} cuisine, a culinary journey that promises to
-          delight your taste buds.
-        </p>
-        <p className='text-muted' style={{ fontSize: '1.5rem' }}>
-          <strong>Discover the Origin:</strong> Savor the authentic tastes
-          originating from {item.strArea}, where tradition meets taste.
-        </p>
-        <Link to={`/recipe/${item.idMeal}`}>View Recipe</Link>
-      </div>
-    </div>
-  </div>
-));
 
 const MainContent = () => {
   const { food } = useContext(foodContext);
@@ -50,63 +17,94 @@ const MainContent = () => {
   }
 
   return (
-    <div>
+    <main>
       <hr
         className='featurette-divider'
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
       />
-      <div
-        id='myCarousel'
-        className='carousel slide mb-6 my-5'
-        data-bs-ride='carousel'
-      >
-        <div className='carousel-indicators'>
-          {food.map((_, index) => (
-            <button
-              key={index}
-              type='button'
-              data-bs-target='#myCarousel'
-              data-bs-slide-to={index}
-              className={index === 0 ? 'active' : ''}
-              aria-label={`Slide ${index + 1}`}
-            ></button>
-          ))}
+      <section className='container d-flex justify-content-center'>
+        <div id='carouselMeals' className='carousel slide ' data-bs-ride='true'>
+          <div className='carousel-indicators'>
+            {food.slice(0, 3).map((_, index) => (
+              <button
+                key={index}
+                type='button'
+                data-bs-target='#carouselMeals'
+                data-bs-slide-to={index}
+                className={index === 0 ? 'active' : ''}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+          <div className='carousel-inner'>
+            {food.slice(0, 3).map((item, index) => (
+              <div
+                key={item.idMeal}
+                className={`carousel-item ${index === 0 ? 'active' : ''}`}
+              >
+                <div className='container d-flex flex-column flex-lg-row justify-content-between align-items-center'>
+                  <img
+                    src={item.strMealThumb}
+                    className='d-block shadow-lg'
+                    alt={item.strMeal}
+                    style={{
+                      maxHeight: '450px',
+                      maxWidth: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <div
+                    className='ms-5 d-none d-lg-block'
+                    style={{ width: '50%' }}
+                  >
+                    <h1 className='display-4 fst-italic'>{item.strMeal}</h1>
+                    <p className='text-muted' style={{ fontSize: '1.5rem' }}>
+                      <strong>Feast on the Flavors:</strong> Dive into the heart
+                      of {item.strCategory} cuisine, a culinary journey that
+                      promises to delight your taste buds.
+                    </p>
+                    <p className='text-muted' style={{ fontSize: '1.5rem' }}>
+                      <strong>Discover the Origin:</strong> Savor the authentic
+                      tastes originating from {item.strArea}, where tradition
+                      meets taste.
+                    </p>
+                    <Link to={`/recipe/${item.idMeal}`}>View Recipe</Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button
+            className='carousel-control-prev'
+            type='button'
+            data-bs-target='#carouselMeals'
+            data-bs-slide='prev'
+          >
+            <span
+              className='carousel-control-prev-icon'
+              aria-hidden='true'
+            ></span>
+            <span className='visually-hidden'>Previous</span>
+          </button>
+          <button
+            className='carousel-control-next'
+            type='button'
+            data-bs-target='#carouselMeals'
+            data-bs-slide='next'
+          >
+            <span
+              className='carousel-control-next-icon'
+              aria-hidden='true'
+            ></span>
+            <span className='visually-hidden'>Next</span>
+          </button>
         </div>
-        <div className='carousel-inner'>
-          {food.map((item, index) => (
-            <CarouselItem key={item.idMeal} item={item} index={index} />
-          ))}
-        </div>
-        <button
-          className='carousel-control-prev'
-          type='button'
-          data-bs-target='#myCarousel'
-          data-bs-slide='prev'
-        >
-          <span
-            className='carousel-control-prev-icon'
-            aria-hidden='true'
-          ></span>
-          <span className='visually-hidden'>Previous</span>
-        </button>
-        <button
-          className='carousel-control-next'
-          type='button'
-          data-bs-target='#myCarousel'
-          data-bs-slide='next'
-        >
-          <span
-            className='carousel-control-next-icon'
-            aria-hidden='true'
-          ></span>
-          <span className='visually-hidden'>Next</span>
-        </button>
-      </div>
+      </section>
       <hr
         className='featurette-divider'
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
       />
-      <div className='container marketing'>
+      <section className='container marketing'>
         <div className='row m-5'>
           {food.slice(3, 6).map((item) => (
             <div
@@ -138,12 +136,10 @@ const MainContent = () => {
             </div>
           ))}
         </div>
-
         <hr
           className='featurette-divider'
           style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
         />
-
         {food.slice(6, 9).map((item, index) => (
           <div
             key={item.idMeal}
@@ -177,14 +173,10 @@ const MainContent = () => {
                 style={{ objectFit: 'cover' }}
               />
             </div>
-            {/* <hr
-              className='featurette-divider'
-              style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
-            /> */}
           </div>
         ))}
-      </div>{' '}
-    </div>
+      </section>
+    </main>
   );
 };
 
