@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 
 const CookieSettingsPage = () => {
   const [cookiesEnabled, setCookiesEnabled] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
 
   useEffect(() => {
     const cookiePreference = localStorage.getItem('cookiesEnabled');
@@ -11,11 +13,18 @@ const CookieSettingsPage = () => {
   const handleSave = (enableCookies) => {
     localStorage.setItem('cookiesEnabled', enableCookies);
     setCookiesEnabled(enableCookies);
-    alert(`Cookies have been ${enableCookies ? 'enabled' : 'disabled'}.`);
+    const message = `Cookies have been ${
+      enableCookies ? 'enabled' : 'disabled'
+    }.`;
+    setNotificationMessage(message);
+    setShowNotification(true);
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 3000);
   };
 
   return (
-    <div className='container my-5'>
+    <div className='container my-5 py-5'>
       <h1>Privacy & Cookie Policy</h1>
 
       <p>
@@ -51,6 +60,19 @@ const CookieSettingsPage = () => {
           Disable Cookies
         </button>
       </div>
+      {showNotification && (
+        <div
+          className='position-fixed p-3'
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'lightgreen',
+          }}
+        >
+          {notificationMessage}
+        </div>
+      )}
     </div>
   );
 };

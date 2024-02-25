@@ -21,7 +21,7 @@ const Header = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchInput(foodSearch);
-    navigate('/recipeIndex');
+    navigate('/recipe-index');
   };
 
   const handleSubscribe = (e) => {
@@ -86,7 +86,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to='/recipeIndex' className='nav-link'>
+                    <Link to='/recipe-index' className='nav-link'>
                       <button className='btn btn-success'>Recipes</button>
                     </Link>
                   </li>

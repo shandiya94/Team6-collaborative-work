@@ -11,27 +11,22 @@ const Footer = () => {
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
           <div className='col mb-3'>
-            <h5 className={textColorClass}>PRIVACY POLICY</h5>
+            <h5 className={textColorClass}>PRIVACY </h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
-                  to='/cookesettings'
+                  to='/cookie-settings'
                   className='nav-link p-0 text-body-secondary'
                 >
                   Cookie settings
                 </Link>
               </li>
-            </ul>
-          </div>
-          <div className='col mb-3'>
-            <h5 className={textColorClass}>HELP & SUPPORT</h5>
-            <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
-                  to='/contact'
+                  to='/privacy-policy'
                   className='nav-link p-0 text-body-secondary'
                 >
-                  Contact Us
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -49,6 +44,29 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          <div className='col mb-3'>
+            <h5 className={textColorClass}>Share Hungry Chief</h5>
+            <ul className='nav flex-column'>
+              <li className='nav-item mb-2'>
+                <a
+                  href='https://www.facebook.com/sharer/sharer.php?u=https://recipe-alex-test.netlify.app/'
+                  target='_blank'
+                  className='nav-link p-0 text-body-secondary'
+                >
+                  Share on Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href='https://twitter.com/intent/tweet?text=Not%20sure%20what%20to%20cook%3F%20Come%20check%20out%20Hungry%20Chief%20for%20some%20culinary%20inspiration!&url=recipe-alex-test.netlify.app/'
+                  target='_blank'
+                  className='nav-link p-0 text-body-secondary'
+                >
+                  Share on Twitter
+                </a>
+              </li>
+            </ul>
+          </div>
 
           <div className='col mb-3'>
             <h5 className={textColorClass}>Follow Us</h5>
@@ -57,16 +75,9 @@ const Footer = () => {
                 <a
                   href='https://github.com/shandiya94/Team6-collaborative-work/tree/main'
                   className='nav-link p-0 text-body-secondary'
+                  target='_blank'
                 >
                   Github
-                </a>
-              </li>
-              <li className='nav-item mb-2'>
-                <a
-                  href='https://github.com/shandiya94/Team6-collaborative-work/tree/main'
-                  className='nav-link p-0 text-body-secondary'
-                >
-                  LinkedIn
                 </a>
               </li>
             </ul>
