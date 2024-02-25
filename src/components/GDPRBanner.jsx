@@ -38,8 +38,12 @@ const GDPRBanner = () => {
       }}
     >
       <p>
-        This website uses cookies to ensure you get the best experience on our
-        website.
+        Your privacy matters to us. We use cookies to personalize content and
+        analyze our traffic. By clicking "Accept," you consent to the use of
+        cookies for these purposes. You can learn more about it by reading our
+        <a href='/privacy-policy'>Privacy Policy</a>, and you can change your
+        preferences at any time on our{' '}
+        <a href='/cookie-settings'>Cookie Settings</a> page.
       </p>
       <button onClick={handleAccept} className='btn btn-success me-2'>
         Accept

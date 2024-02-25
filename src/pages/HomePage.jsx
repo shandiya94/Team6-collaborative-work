@@ -1,11 +1,9 @@
 import MainContent from '../components/MainContent';
 import foodBackground from '../assets/foodBackground.webp';
-import GDPRBanner from '../components/GDPRBanner';
 
 const HomePage = () => {
   return (
     <div>
-      <GDPRBanner />
       <section id='top' className={`container col-xxl-16 px-4`}>
         <div className='row flex-lg-row justify-content-evenly align-items-center g-5 py-5 mt-1'>
           <div className='col-10 col-sm-8 col-lg-6'>
