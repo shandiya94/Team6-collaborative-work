@@ -1,6 +1,6 @@
 import Header from './components/Header';
 import { ThemeContext } from './hooks/themeContext';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage';
 import RecipePage from './pages/RecipePage';
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Router>
       <div data-bs-theme={darkMode ? 'dark' : 'light'} className={bgColorClass}>
-      {showGDPRBanner && <GDPRBanner />}
+        {showGDPRBanner && <GDPRBanner />}
         <Subscribe />
         <Header />
         <Routes>
