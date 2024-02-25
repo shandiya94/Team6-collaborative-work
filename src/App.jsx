@@ -31,7 +31,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/recipe-index' element={<RecipeIndexPage />} />
-          <Route path='/recipe/:id' element={<RecipePage />} />
+          <Route path='/recipe/:id/:name' element={<RecipePage />} />
           <Route path='*' element={<NotFoundPage />} />
           <Route path='cookie-settings' element={<CookieSettingsPage />} />
           <Route path='privacy-policy' element={<PrivacyPolicyPage />} />

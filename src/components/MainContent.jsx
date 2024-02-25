@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 const MainContent = () => {
   const { food } = useContext(foodContext);
 
+  function formatRecipeNameForUrl(name) {
+    return name
+      .toLowerCase()
+      .replace(/ /g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  }
+
   if (!food || food.length === 0) {
     return (
       <div
@@ -68,7 +75,13 @@ const MainContent = () => {
                       tastes originating from {item.strArea}, where tradition
                       meets taste.
                     </p>
-                    <Link to={`/recipe/${item.idMeal}`}>View Recipe</Link>
+                    <Link
+                      to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+                        item.strMeal
+                      )}`}
+                    >
+                      View Recipe
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -126,7 +139,9 @@ const MainContent = () => {
               </p>
               <p>
                 <Link
-                  to={`/recipe/${item.idMeal}`}
+                  to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+                    item.strMeal
+                  )}`}
                   className='text-primary'
                   style={{ textDecoration: 'underline' }}
                 >
@@ -155,7 +170,9 @@ const MainContent = () => {
               <p className='text-muted'>
                 {`${item.strInstructions.slice(0, 400)} ... `}
                 <Link
-                  to={`/recipe/${item.idMeal}`}
+                  to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+                    item.strMeal
+                  )}`}
                   className='text-primary'
                   style={{ textDecoration: 'underline' }}
                 >

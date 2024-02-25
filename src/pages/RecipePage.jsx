@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
 
 const RecipePage = () => {
-  const { id } = useParams();
+  const { id, name } = useParams();
   const { getFoodById } = useContext(foodContext);
 
   const selectedRecipe = getFoodById(id);

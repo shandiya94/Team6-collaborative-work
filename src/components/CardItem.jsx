@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 const CardItem = () => {
   const { food } = useContext(foodContext);
 
+  function formatRecipeNameForUrl(name) {
+    return name
+      .toLowerCase()
+      .replace(/ /g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  }
+
   if (!food || food.length === 0) {
     return (
       <div
@@ -20,7 +27,12 @@ const CardItem = () => {
     <div className='m-80 py-5 mt-5'>
       <div className='card-container justify-content-center d-flex flex-wrap '>
         {food.map((item) => (
-          <Link to={`/recipe/${item.idMeal}`} key={item.idMeal}>
+          <Link
+            to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+              item.strMeal
+            )}`}
+            key={item.idMeal}
+          >
             <div className='card m-2' style={{ maxWidth: '14rem' }}>
               <img src={item.strMealThumb} className='card-img-top' alt='...' />
               <div className='card-body'>
