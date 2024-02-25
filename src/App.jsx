@@ -8,6 +8,7 @@ import RecipeIndexPage from './pages/RecipeIndexPage';
 import Footer from './components/Footer';
 import CookieSettingsPage from './pages/CookieSettingsPage';
 import HomePage from './pages/HomePage';
+import GDPRBanner from './components/GDPRBanner';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -15,10 +16,15 @@ import Subscribe from './components/Subscribe';
 
 const App = () => {
   const { darkMode, bgColorClass } = useContext(ThemeContext);
-
+  const [showGDPRBanner, setShowGDPRBanner] = useState(false);
+  useEffect(() => {
+    const cookiesConsent = localStorage.getItem('cookiesEnabled');
+    setShowGDPRBanner(cookiesConsent === null);
+  }, []);
   return (
     <Router>
       <div data-bs-theme={darkMode ? 'dark' : 'light'} className={bgColorClass}>
+      {showGDPRBanner && <GDPRBanner />}
         <Subscribe />
         <Header />
         <Routes>
