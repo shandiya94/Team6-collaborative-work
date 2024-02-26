@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUsPage = () => {
   return (
-    <div className='container my-5 py-5'>
+    <div className='container my-5 py-5' style={{ height: '55vh' }}>
       <h1 className='text-muted'>About Hungry Chef</h1>
       <p className='text-muted'>
         Welcome to Hungry Chef, your ultimate destination for discovering

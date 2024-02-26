@@ -2,7 +2,7 @@ import React from 'react';
 
 const AccessibilityStatementPage = () => {
   return (
-    <div className='container my-5 py-5'>
+    <div className='container my-5 py-5' style={{ height: '55vh' }}>
       <h1 className='text-muted'>Accessibility Statement</h1>
       <p className='text-muted'>
         At Hungry Chef, we are committed to ensuring digital accessibility for
