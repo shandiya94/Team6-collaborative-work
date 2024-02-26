@@ -27,16 +27,19 @@ const CardItem = () => {
     <div className='m-80 py-5 mt-5'>
       <div className='card-container justify-content-center d-flex flex-wrap '>
         {food.map((item) => (
+
           <Link
             to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
               item.strMeal
             )}`}
             key={item.idMeal}
+            aria-label={`View recipe for ${item.strMeal}`}
           >
+
             <div className='card m-2' style={{ maxWidth: '14rem' }}>
-              <img src={item.strMealThumb} className='card-img-top' alt='...' />
+              <img src={item.strMealThumb} className='card-img-top' alt={`Thumbnail of ${item.strMeal}`} />
               <div className='card-body'>
-                <h5 className='card-title'>{item.strMeal}</h5>
+                <h5 className='card-title' aria-label={`Title: ${item.strMeal}`}>{item.strMeal}</h5>
               </div>
             </div>
           </Link>

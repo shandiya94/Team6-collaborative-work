@@ -7,7 +7,7 @@ const Footer = () => {
   let { bgColorClass, textColorClass } = useContext(ThemeContext);
 
   return (
-    <div className={bgColorClass}>
+    <footer className={bgColorClass}>
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
           <div className='col mb-3'>
@@ -17,6 +17,7 @@ const Footer = () => {
                 <Link
                   to='/cookie-settings'
                   className='nav-link p-0 text-body-secondary'
+                  aria-label='Go to Cookie Settings'
                 >
                   Cookie settings
                 </Link>
@@ -65,6 +66,7 @@ const Footer = () => {
                   href='https://www.facebook.com/sharer/sharer.php?u=https://recipe-alex-test.netlify.app/'
                   target='_blank'
                   className='nav-link p-0 text-body-secondary'
+                  aria-label='Visit our Github page'
                 >
                   Share on Facebook
                 </a>
@@ -126,7 +128,7 @@ const Footer = () => {
           </div>
         </footer>
       </div>
-    </div>
+    </footer>
   );
 };
 
