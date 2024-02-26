@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: (our URL link goes here)
