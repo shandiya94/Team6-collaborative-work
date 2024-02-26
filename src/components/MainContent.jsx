@@ -24,9 +24,7 @@ const MainContent = () => {
   }
 
   return (
-
     <main>
-
       <hr
         className='featurette-divider'
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
@@ -114,7 +112,6 @@ const MainContent = () => {
             ></span>
             <span className='visually-hidden'>Next</span>
           </button>
-
         </div>
       </section>
       <hr
@@ -180,7 +177,7 @@ const MainContent = () => {
                   className='text-primary'
                   style={{ textDecoration: 'underline' }}
                 >
-                  Learn More
+                  View Recipe
                 </Link>
               </p>
             </div>
@@ -196,10 +193,8 @@ const MainContent = () => {
             </div>
           </div>
         ))}
-
       </section>
     </main>
-
   );
 };
 
