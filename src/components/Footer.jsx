@@ -11,7 +11,7 @@ const Footer = () => {
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
           <div className='col mb-3'>
-            <h5 className={textColorClass}>PRIVACY </h5>
+            <h5 className='text-muted'>PRIVACY</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
@@ -32,20 +32,33 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className={textColorClass}>SUBSCRIBE</h5>
+            <h5 className='text-muted'>About </h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
                   to='/contact'
                   className='nav-link p-0 text-body-secondary'
                 >
-                  Get a newsletter
+                  About Us
+                </Link>
+              </li>
+              <li className='nav-item mb-2'>
+                <Link
+                  to='/accessibility-statement'
+                  className='nav-link p-0 text-body-secondary'
+                >
+                  Accessibility
+                </Link>
+              </li>
+              <li className='nav-item mb-2'>
+                <Link to='/faq' className='nav-link p-0 text-body-secondary'>
+                  FAQ
                 </Link>
               </li>
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className={textColorClass}>Share Hungry Chief</h5>
+            <h5 className='text-muted'>Share Hungry Chief</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <a
@@ -69,7 +82,7 @@ const Footer = () => {
           </div>
 
           <div className='col mb-3'>
-            <h5 className={textColorClass}>Follow Us</h5>
+            <h5 className='text-muted'>Follow Us</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <a
@@ -83,14 +96,14 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className={textColorClass}>Address</h5>
+            <h5 className='text-muted'>Contact Information</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2 text-body-secondary'>
-                Virkesvägen 2, 12030, Stockholm
+                Virkesvägen 2, 12030, Stockholm Fed25Team6@hyperisland.se
               </li>
             </ul>
           </div>
-          <hr style={{ width: '100%' }} />
+          <hr style={{ width: '100%', borderColor: '#666666' }} />
           <div className='d-flex justify-content-between w-100'>
             <div className='col'>
               <p className='text-body-secondary' style={{ fontSize: 'larger' }}>
