@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: (our URL link goes here)
+Sitemap: https://www.xml-sitemaps.com/download/main--hungry-chief-jess.netlify.app-3d4843b2b/sitemap.html?view=1
