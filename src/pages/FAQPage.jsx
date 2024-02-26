@@ -1,8 +1,14 @@
 import React from 'react';
+import MetaTags from '../components/MetaTags';
 
 const FAQPage = () => {
   return (
     <div className='container my-5 py-5'>
+      <MetaTags
+        title='FAQ - Hungry Chef'
+        description='Find answers to frequently asked questions about Hungry Chef, including tips on cooking, recipe selection, and how to use our website.'
+      />
+
       <h1 className='text-muted'>Frequently Asked Questions</h1>
       <div className='text-muted'>
         <h2>How can I find a recipe?</h2>

@@ -58,7 +58,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className='text-muted'>Share Hungry Chief</h5>
+            <h5 className='text-muted'>Share Hungry Chef</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <a
@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href='https://twitter.com/intent/tweet?text=Not%20sure%20what%20to%20cook%3F%20Come%20check%20out%20Hungry%20Chief%20for%20some%20culinary%20inspiration!&url=recipe-alex-test.netlify.app/'
+                  href='https://twitter.com/intent/tweet?text=Not%20sure%20what%20to%20cook%3F%20Come%20check%20out%20Hungry%20Chef%20for%20some%20culinary%20inspiration!&url=recipe-alex-test.netlify.app/'
                   target='_blank'
                   className='nav-link p-0 text-body-secondary'
                 >
@@ -118,7 +118,7 @@ const Footer = () => {
                 className='text-body-secondary'
                 style={{ fontSize: 'smaller' }}
               >
-                Copyright ©2024 Hungry Chief, Inc or related companies. All
+                Copyright ©2024 Hungry Chef, Inc or related companies. All
                 rights reserved, including rights for text and data mining and
                 training of artificial technologies or similar technologies.
               </p>

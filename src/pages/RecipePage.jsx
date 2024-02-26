@@ -1,15 +1,30 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
+import MetaTags from '../components/MetaTags';
 
 const RecipePage = () => {
   const { id, name } = useParams();
   const { getFoodById } = useContext(foodContext);
-
   const selectedRecipe = getFoodById(id);
 
+  const pageTitle = selectedRecipe
+    ? `${selectedRecipe.strMeal} | Hungry Chef`
+    : 'Recipe Not Found | Hungry Chef';
+  const pageDescription = selectedRecipe
+    ? `Enjoy the delicious ${selectedRecipe.strMeal} recipe from Hungry Chef. Learn about the ingredients, instructions, and cooking tips for making ${selectedRecipe.strMeal}.`
+    : 'This recipe could not be found. Explore other delicious recipes on Hungry Chef.';
+
   if (!selectedRecipe) {
-    return <div className='text-center'>Recipe not found.</div>;
+    return (
+      <div className='text-center'>
+        <MetaTags
+          title='Recipe Not Found | Hungry Chef'
+          description='This recipe could not be found. Explore other delicious recipes on Hungry Chef.'
+        />
+        Recipe not found.
+      </div>
+    );
   }
 
   const {
@@ -21,7 +36,6 @@ const RecipePage = () => {
     strYoutube,
   } = selectedRecipe;
 
-  // Extract ingredients and their measures
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     const ingredient = selectedRecipe[`strIngredient${i}`];
@@ -33,6 +47,7 @@ const RecipePage = () => {
 
   return (
     <div className='d-flex justify-content-center py-5 mt-5'>
+      <MetaTags title={pageTitle} description={pageDescription} />
       <div className='card mb-3' style={{ maxWidth: '840px', width: '100%' }}>
         <div className='row g-0'>
           <div className='col-md-6'>

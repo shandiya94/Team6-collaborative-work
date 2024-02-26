@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import MetaTags from '../components/MetaTags';
 
 const CookieSettingsPage = () => {
   const [cookiesEnabled, setCookiesEnabled] = useState(false);
@@ -25,6 +26,10 @@ const CookieSettingsPage = () => {
 
   return (
     <div className='container my-5 py-5'>
+      <MetaTags
+        title='Cookie Settings - Hungry Chef'
+        description='Manage your cookie settings on Hungry Chef. Choose how you want us to use cookies to personalize your experience and respect your privacy.'
+      />
       <h1 className='text-muted'>Privacy & Cookie Policy</h1>
 
       <p className='text-muted'>

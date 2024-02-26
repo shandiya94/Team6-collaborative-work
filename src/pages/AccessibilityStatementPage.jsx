@@ -1,8 +1,14 @@
 import React from 'react';
+import MetaTags from '../components/MetaTags';
 
 const AccessibilityStatementPage = () => {
   return (
     <div className='container my-5 py-5' style={{ height: '55vh' }}>
+      <MetaTags
+        title='Accessibility Statement - Hungry Chef'
+        description='Read our Accessibility Statement to learn how Hungry Chef is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.'
+      />
+
       <h1 className='text-muted'>Accessibility Statement</h1>
       <p className='text-muted'>
         At Hungry Chef, we are committed to ensuring digital accessibility for

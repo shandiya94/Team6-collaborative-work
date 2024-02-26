@@ -1,10 +1,16 @@
 // PrivacyPolicyPage.jsx
 
 import React from 'react';
+import MetaTags from '../components/MetaTags';
 
 const PrivacyPolicyPage = () => {
   return (
     <div className='container my-5 py-5'>
+      <MetaTags
+        title='Privacy Policy - Hungry Chef'
+        description='Read our Privacy Policy to understand how Hungry Chef collects, uses, and protects your information while you explore delicious recipes and cooking tips.'
+      />
+
       <h1 className='text-muted'>Privacy Policy</h1>
       <p className='text-muted'>
         This Privacy Policy outlines how OurWebsiteName ("we", "our", or "us")
