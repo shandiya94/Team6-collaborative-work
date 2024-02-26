@@ -11,6 +11,9 @@ import NotFoundPage from './pages/NotFoundPage';
 import RecipePage from './pages/RecipePage';
 import RecipeIndexPage from './pages/RecipeIndexPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import AboutUsPage from './pages/AboutUsPage';
+import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
+import FAQPage from './pages/FAQPage';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -33,9 +36,16 @@ const App = () => {
           <Route path='/recipe-index' element={<RecipeIndexPage />} />
           <Route path='/recipe/:id/:name' element={<RecipePage />} />
           <Route path='*' element={<NotFoundPage />} />
-          <Route path='cookie-settings' element={<CookieSettingsPage />} />
-          <Route path='privacy-policy' element={<PrivacyPolicyPage />} />
+          <Route path='/cookie-settings' element={<CookieSettingsPage />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
+          <Route path='/contact' element={<AboutUsPage />} />
+          <Route
+            path='/accessibility-statement'
+            element={<AccessibilityStatementPage />}
+          />
+          <Route path='/faq' element={<FAQPage />} />
         </Routes>
+
         <Footer />
       </div>
     </Router>

@@ -25,23 +25,23 @@ const CookieSettingsPage = () => {
 
   return (
     <div className='container my-5 py-5'>
-      <h1>Privacy & Cookie Policy</h1>
+      <h1 className='text-muted'>Privacy & Cookie Policy</h1>
 
-      <p>
+      <p className='text-muted'>
         Thank you for visiting our website. This Privacy and Cookie Policy
         outlines how we collect, use, and protect any information you provide to
         us, as well as the use of cookies on our website.
       </p>
-      <h1>Information We Collect</h1>
-      <p>
+      <h1 className='text-muted'>Information We Collect</h1>
+      <p className='text-muted'>
         When you visit our website, we may collect certain information about
         your visit, including but not limited to your IP address, browser type,
         referring/exit pages, and the date and time of your visit. We may also
         collect personal information that you voluntarily provide to us, such as
         your name, email address, or any other contact details.
       </p>
-      <h1>Use of Cookies</h1>
-      <p>
+      <h1 className='text-muted'>Use of Cookies</h1>
+      <p className='text-muted'>
         Our website uses cookies to enhance your browsing experience and provide
         personalized content. Cookies are small text files that are stored on
         your computer or mobile device when you visit a website. We use cookies

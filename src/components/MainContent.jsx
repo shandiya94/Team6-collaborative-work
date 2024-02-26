@@ -64,7 +64,7 @@ const MainContent = () => {
                     className='ms-5 d-none d-lg-block'
                     style={{ width: '50%' }}
                   >
-                    <h1 className='display-4 fst-italic'>{item.strMeal}</h1>
+                    <h1 className='display-4 '>{item.strMeal}</h1>
                     <p className='text-muted' style={{ fontSize: '1.5rem' }}>
                       <strong>Feast on the Flavors:</strong> Dive into the heart
                       of {item.strCategory} cuisine, a culinary journey that

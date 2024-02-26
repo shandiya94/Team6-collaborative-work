@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import 'bootswatch/dist/cerulean/bootstrap.min.css';
+import 'bootswatch/dist/Journal/bootstrap.min.css';
 import SubscribeProvider from './hooks/subscribeContext.jsx';
 import ThemeProvider from './hooks/themeContext.jsx';
 import FoodProvider from './hooks/foodContext.jsx';

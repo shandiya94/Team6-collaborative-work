@@ -28,29 +28,29 @@ const Header = () => {
     e.preventDefault();
     toggleSubscribe();
   };
-  const [dynamicStyle, setDynamicStyle] = useState({});
+  // const [dynamicStyle, setDynamicStyle] = useState({});
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setDynamicStyle({
-          marginLeft: '0px',
-          marginTop: '0px',
-        });
-      } else {
-        setDynamicStyle({
-          marginLeft: '50px',
-          marginTop: '100px',
-        });
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth < 768) {
+  //       setDynamicStyle({
+  //         marginLeft: '0px',
+  //         marginTop: '0px',
+  //       });
+  //     } else {
+  //       setDynamicStyle({
+  //         marginLeft: '50px',
+  //         marginTop: '100px',
+  //       });
+  //     }
+  //   };
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    handleResize();
+  //   handleResize();
 
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
   return (
     <header className={`mb-4 fixed-top ${bgColorclassName}`}>
@@ -60,7 +60,9 @@ const Header = () => {
       >
         <div className='container-fluid d-flex justify-content-between'>
           <Link className='navbar-brand ' to='/'>
-            <h1>Hungry Chef</h1>
+            <h1 className='display-5  lh-1 mb-3' style={{ color: '#4c723b' }}>
+              Hungry Chef
+            </h1>
           </Link>
           <div>
             <button
@@ -93,7 +95,7 @@ const Header = () => {
                 </ul>
                 <button
                   onClick={handleSubscribe}
-                  className=' btn btn-success mr-5 '
+                  className=' btn btn-success me-2 '
                   type='submit'
                 >
                   subscribe
