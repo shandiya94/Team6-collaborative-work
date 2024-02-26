@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
 
 const RecipePage = () => {
-  const { id } = useParams();
+  const { id, name } = useParams();
   const { getFoodById } = useContext(foodContext);
 
   const selectedRecipe = getFoodById(id);
@@ -32,7 +32,7 @@ const RecipePage = () => {
   }
 
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='d-flex justify-content-center py-5 mt-5'>
       <div className='card mb-3' style={{ maxWidth: '840px', width: '100%' }}>
         <div className='row g-0'>
           <div className='col-md-6'>
@@ -45,7 +45,7 @@ const RecipePage = () => {
                 height: 'auto',
                 objectFit: 'contain',
                 maxHeight: '400px',
-              }} // Adjust maxHeight as needed
+              }}
             />
           </div>
           <div className='col-md-6'>

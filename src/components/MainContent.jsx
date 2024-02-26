@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 const MainContent = () => {
   const { food } = useContext(foodContext);
 
-  const uniqueFood = Array.from(new Set(food?.map((item) => item.idMeal))).map(
-    (idMeal) => food.find((item) => item.idMeal === idMeal)
-  );
+  function formatRecipeNameForUrl(name) {
+    return name
+      .toLowerCase()
+      .replace(/ /g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  }
 
-  // const uniqueFood = food;
-
-  if (!uniqueFood || uniqueFood.length === 0) {
+  if (!food || food.length === 0) {
     return (
       <div
         className='d-flex justify-content-center align-items-center text-xxl bg-white'
@@ -23,96 +24,106 @@ const MainContent = () => {
   }
 
   return (
-    <section>
+
+    <main>
+
       <hr
         className='featurette-divider'
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
       />
-      <div
-        id='myCarousel'
-        className='carousel slide mb-6 my-5'
-        data-bs-ride='carousel'
-      >
-        <div className='carousel-indicators'>
-          {uniqueFood.map((_, index) => (
-            <button
-              key={index}
-              type='button'
-              data-bs-target='#myCarousel'
-              data-bs-slide-to={index}
-              className={index === 0 ? 'active' : ''}
-              aria-label={`Slide ${index + 1}`}
-            ></button>
-          ))}
-        </div>
-        <div className='carousel-inner'>
-          {uniqueFood.map((item, index) => (
-            <article
-              key={item.idMeal}
-              className={`carousel-item ${index === 0 ? 'active' : ''}`}
-            >
-              <div className='container d-flex justify-content-between align-items-center'>
-                <img
-                  src={item.strMealThumb}
-                  className='d-block shadow-lg'
-                  alt={item.strMeal}
-                  style={{
-                    maxHeight: '450px',
-                    maxWidth: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <div className='ms-5' style={{ width: '50%' }}>
-                  <h1 className='display-4 fst-italic'>{item.strMeal}</h1>
-                  <p className='text-muted' style={{ fontSize: '1.5rem' }}>
-                    <strong>Feast on the Flavors:</strong> Dive into the heart
-                    of {item.strCategory} cuisine, a culinary journey that
-                    promises to delight your taste buds.
-                  </p>
-                  <p className='text-muted' style={{ fontSize: '1.5rem' }}>
-                    <strong>Discover the Origin:</strong> Savor the authentic
-                    tastes originating from {item.strArea}, where tradition
-                    meets taste.
-                  </p>
 
-                  <Link to={`/recipe/${item.idMeal}`}>View Recipe</Link>
+      <section className='container d-flex justify-content-center'>
+        <div id='carouselMeals' className='carousel slide ' data-bs-ride='true'>
+          <div className='carousel-indicators'>
+            {food.slice(0, 3).map((_, index) => (
+              <button
+                key={index}
+                type='button'
+                data-bs-target='#carouselMeals'
+                data-bs-slide-to={index}
+                className={index === 0 ? 'active' : ''}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+          <div className='carousel-inner'>
+            {food.slice(0, 3).map((item, index) => (
+              <div
+                key={item.idMeal}
+                className={`carousel-item ${index === 0 ? 'active' : ''}`}
+              >
+                <div className='container d-flex flex-column flex-lg-row justify-content-between align-items-center'>
+                  <img
+                    src={item.strMealThumb}
+                    className='d-block shadow-lg'
+                    alt={item.strMeal}
+                    style={{
+                      maxHeight: '450px',
+                      maxWidth: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <div
+                    className='ms-5 d-none d-lg-block'
+                    style={{ width: '50%' }}
+                  >
+                    <h1 className='display-4 '>{item.strMeal}</h1>
+                    <p className='text-muted' style={{ fontSize: '1.5rem' }}>
+                      <strong>Feast on the Flavors:</strong> Dive into the heart
+                      of {item.strCategory} cuisine, a culinary journey that
+                      promises to delight your taste buds.
+                    </p>
+                    <p className='text-muted' style={{ fontSize: '1.5rem' }}>
+                      <strong>Discover the Origin:</strong> Savor the authentic
+                      tastes originating from {item.strArea}, where tradition
+                      meets taste.
+                    </p>
+                    <Link
+                      to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+                        item.strMeal
+                      )}`}
+                    >
+                      View Recipe
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
+          <button
+            className='carousel-control-prev'
+            type='button'
+            data-bs-target='#carouselMeals'
+            data-bs-slide='prev'
+          >
+            <span
+              className='carousel-control-prev-icon'
+              aria-hidden='true'
+            ></span>
+            <span className='visually-hidden'>Previous</span>
+          </button>
+          <button
+            className='carousel-control-next'
+            type='button'
+            data-bs-target='#carouselMeals'
+            data-bs-slide='next'
+          >
+            <span
+              className='carousel-control-next-icon'
+              aria-hidden='true'
+            ></span>
+            <span className='visually-hidden'>Next</span>
+          </button>
+
         </div>
-        <button
-          className='carousel-control-prev'
-          type='button'
-          data-bs-target='#myCarousel'
-          data-bs-slide='prev'
-        >
-          <span
-            className='carousel-control-prev-icon'
-            aria-hidden='true'
-          ></span>
-          <span className='visually-hidden'>Previous</span>
-        </button>
-        <button
-          className='carousel-control-next'
-          type='button'
-          data-bs-target='#myCarousel'
-          data-bs-slide='next'
-        >
-          <span
-            className='carousel-control-next-icon'
-            aria-hidden='true'
-          ></span>
-          <span className='visually-hidden'>Next</span>
-        </button>
-      </div>
+      </section>
       <hr
         className='featurette-divider'
         style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
       />
-      <div className='container marketing'>
+      <section className='container marketing'>
         <div className='row m-5'>
-          {uniqueFood.slice(3, 6).map((item) => (
+          {food.slice(3, 6).map((item) => (
             <div
               key={item.idMeal}
               className='col-lg-4 justify-content-center align-items-center text-center'
@@ -132,7 +143,9 @@ const MainContent = () => {
               </p>
               <p>
                 <Link
-                  to={`/recipe/${item.idMeal}`}
+                  to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+                    item.strMeal
+                  )}`}
                   className='text-primary'
                   style={{ textDecoration: 'underline' }}
                 >
@@ -142,13 +155,11 @@ const MainContent = () => {
             </div>
           ))}
         </div>
-
         <hr
           className='featurette-divider'
           style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
         />
-
-        {uniqueFood.slice(6, 9).map((item, index) => (
+        {food.slice(6, 9).map((item, index) => (
           <div
             key={item.idMeal}
             className={`row featurette ${
@@ -163,7 +174,9 @@ const MainContent = () => {
               <p className='text-muted'>
                 {`${item.strInstructions.slice(0, 400)} ... `}
                 <Link
-                  to={`/recipe/${item.idMeal}`}
+                  to={`/recipe/${item.idMeal}/${formatRecipeNameForUrl(
+                    item.strMeal
+                  )}`}
                   className='text-primary'
                   style={{ textDecoration: 'underline' }}
                 >
@@ -181,14 +194,12 @@ const MainContent = () => {
                 style={{ objectFit: 'cover' }}
               />
             </div>
-            {/* <hr
-              className='featurette-divider'
-              style={{ borderColor: '#666666', borderWidth: '0.2rem' }}
-            /> */}
           </div>
         ))}
-      </div>{' '}
-    </section>
+
+      </section>
+    </main>
+
   );
 };
 
