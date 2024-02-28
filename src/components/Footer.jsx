@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../hooks/themeContext';
 
 const Footer = () => {
-  let { bgColorClass, textColorClass } = useContext(ThemeContext);
+  let { bgColorClass } = useContext(ThemeContext);
 
   return (
     <footer className={bgColorClass}>
       <div className='container'>
         <footer className='row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 mt-4 border-top'>
           <div className='col mb-3'>
-            <h5 className='text-muted'>PRIVACY</h5>
+            <h2 className='text-muted'>PRIVACY</h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
@@ -33,7 +33,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className='text-muted'>About </h5>
+            <h2 className='text-muted'>About </h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <Link
@@ -59,14 +59,15 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className='text-muted'>Share Hungry Chef</h5>
+            <h2 className='text-muted'>Share Us</h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <a
                   href='https://www.facebook.com/sharer/sharer.php?u=https://recipe-alex-test.netlify.app/'
                   target='_blank'
                   className='nav-link p-0 text-body-secondary'
-                  aria-label='Visit our Github page'
+                  aria-label='Share on Facebook'
+                  rel='noreferrer'
                 >
                   Share on Facebook
                 </a>
@@ -76,6 +77,8 @@ const Footer = () => {
                   href='https://twitter.com/intent/tweet?text=Not%20sure%20what%20to%20cook%3F%20Come%20check%20out%20Hungry%20Chef%20for%20some%20culinary%20inspiration!&url=recipe-alex-test.netlify.app/'
                   target='_blank'
                   className='nav-link p-0 text-body-secondary'
+                  aria-label='Share on Twitter'
+                  rel='noreferrer'
                 >
                   Share on Twitter
                 </a>
@@ -84,13 +87,14 @@ const Footer = () => {
           </div>
 
           <div className='col mb-3'>
-            <h5 className='text-muted'>Follow Us</h5>
+            <h2 className='text-muted'>Follow Us</h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
                 <a
                   href='https://github.com/shandiya94/Team6-collaborative-work/tree/main'
                   className='nav-link p-0 text-body-secondary'
                   target='_blank'
+                  rel='noreferrer'
                 >
                   Github
                 </a>
@@ -98,7 +102,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col mb-3'>
-            <h5 className='text-muted'>Contact Information</h5>
+            <h2 className='text-muted'>Contact Information</h2>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2 text-body-secondary'>
                 Virkesvägen 2, 12030, Stockholm Fed25Team6@hyperisland.se

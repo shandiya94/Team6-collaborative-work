@@ -67,6 +67,7 @@ const SubscribeForm = () => {
                 type='text'
                 name='name'
                 placeholder='Full Name'
+                autoComplete='name'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
@@ -89,6 +90,7 @@ const SubscribeForm = () => {
                 type='text'
                 name='email'
                 placeholder='Email'
+                autoComplete='email'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
@@ -100,6 +102,12 @@ const SubscribeForm = () => {
               {touched.email && errors.email ? (
                 <div className='invalid-feedback'>{errors.email}</div>
               ) : null}
+            </Form.Group>
+
+            <Form.Group
+              controlId='formSubscribe'
+              className={`mb-3 ${textColorClass}`}
+            >
               <Form.Check
                 type='checkbox'
                 name='subscribe'
@@ -115,7 +123,7 @@ const SubscribeForm = () => {
 
             <Button
               className={`mx-4 ${textColorClass}`}
-              variant='success'
+              variant='info'
               type='submit'
               disabled={isSubmitting}
               style={{ marginTop: '1em' }}
@@ -124,7 +132,7 @@ const SubscribeForm = () => {
             </Button>
             <Button
               className={`mx-4  ${textColorClass}`}
-              variant='success'
+              variant='dark'
               type='close'
               style={{ marginTop: '1em' }}
               onClick={toggleSubscribe}

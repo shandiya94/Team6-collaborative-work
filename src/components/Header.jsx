@@ -1,9 +1,8 @@
 import { BsBrightnessHigh, BsFillMoonFill } from 'react-icons/bs';
 import { ThemeContext } from '../hooks/themeContext';
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { subscribeContext } from '../hooks/subscribeContext';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../assets/Hungry chef (3).png';
 import { foodContext } from '../hooks/foodContext';
 
 const Header = () => {
@@ -74,7 +73,6 @@ const Header = () => {
               aria-expanded='false'
               aria-label='Toggle navigation'
             >
-
               <span className='navbar-toggler-icon'></span>
             </button>
             <div className='nav-item'>
@@ -85,18 +83,18 @@ const Header = () => {
                 <ul className='navbar-nav '>
                   <li>
                     <Link to='/' className='nav-link '>
-                      <button className='btn btn-success'>Home</button>
+                      <button className='btn  btn-dark'>Home</button>
                     </Link>
                   </li>
                   <li>
                     <Link to='/recipe-index' className='nav-link'>
-                      <button className='btn btn-success'>Recipes</button>
+                      <button className='btn  btn-dark'>Recipes</button>
                     </Link>
                   </li>
                 </ul>
                 <button
                   onClick={handleSubscribe}
-                  className=' btn btn-success me-2 '
+                  className=' btn  btn-info me-2 '
                   type='submit'
                 >
                   subscribe
@@ -115,14 +113,14 @@ const Header = () => {
                   />
                   <button
                     onClick={handleSearch}
-                    className='btn btn-success'
+                    className='btn  btn-dark'
                     type='submit'
                   >
                     Search
                   </button>
                 </form>
 
-                <div className='d-md-block d-none px-3'>
+                <div className='d-block px-3'>
                   {darkMode ? (
                     <BsBrightnessHigh
                       className='text-success'

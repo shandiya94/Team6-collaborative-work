@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { foodContext } from '../hooks/foodContext';
 import MetaTags from '../components/MetaTags';
@@ -7,6 +7,10 @@ const RecipePage = () => {
   const { id, name } = useParams();
   const { getFoodById } = useContext(foodContext);
   const selectedRecipe = getFoodById(id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const pageTitle = selectedRecipe
     ? `${selectedRecipe.strMeal} | Hungry Chef`
@@ -61,6 +65,7 @@ const RecipePage = () => {
                 objectFit: 'contain',
                 maxHeight: '400px',
               }}
+              loading='lazy'
             />
           </div>
           <div className='col-md-6'>

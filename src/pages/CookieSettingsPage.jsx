@@ -25,7 +25,6 @@ const CookieSettingsPage = () => {
   };
 
   return (
-
     <div className='container my-5 py-5'>
       <MetaTags
         title='Cookie Settings - Hungry Chef'
@@ -34,7 +33,6 @@ const CookieSettingsPage = () => {
       <h1 className='text-muted'>Privacy & Cookie Policy</h1>
 
       <p className='text-muted'>
-
         Thank you for visiting our website. This Privacy and Cookie Policy
         outlines how we collect, use, and protect any information you provide to
         us, as well as the use of cookies on our website.
@@ -42,7 +40,6 @@ const CookieSettingsPage = () => {
 
       <h1 className='text-muted'>Information We Collect</h1>
       <p className='text-muted'>
-
         When you visit our website, we may collect certain information about
         your visit, including but not limited to your IP address, browser type,
         referring/exit pages, and the date and time of your visit. We may also
@@ -52,7 +49,6 @@ const CookieSettingsPage = () => {
 
       <h1 className='text-muted'>Use of Cookies</h1>
       <p className='text-muted'>
-
         Our website uses cookies to enhance your browsing experience and provide
         personalized content. Cookies are small text files that are stored on
         your computer or mobile device when you visit a website. We use cookies
@@ -60,18 +56,22 @@ const CookieSettingsPage = () => {
         performance, and providing targeted advertising. By using our website,
         you consent to the use of cookies in accordance with this policy.
       </p>
+      <p className='text-muted'>
+        You can change your cookie settings at any time by clicking the buttons
+        here:
+      </p>
       <div>
         <button
           onClick={() => handleSave(true)}
-          className='btn btn-success me-2'
+          className='btn btn-info me-2'
           aria-label='Enable Cookies'
         >
           Enable Cookies
         </button>
-        <button 
-        onClick={() => handleSave(false)} 
-        className='btn btn-danger'
-        aria-label='Disable Cookies'
+        <button
+          onClick={() => handleSave(false)}
+          className='btn btn-dark'
+          aria-label='Disable Cookies'
         >
           Disable Cookies
         </button>
@@ -90,7 +90,6 @@ const CookieSettingsPage = () => {
           {notificationMessage}
         </div>
       )}
-
     </div>
   );
 };

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from '../hooks/themeContext';
 
 const GDPRBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { bgColorClass } = useContext(ThemeContext);
 
   useEffect(() => {
     const cookiesEnabled = localStorage.getItem('cookiesEnabled');
@@ -26,6 +28,7 @@ const GDPRBanner = () => {
 
   return (
     <div
+      className={bgColorClass}
       style={{
         position: 'fixed',
         bottom: 0,
@@ -37,18 +40,24 @@ const GDPRBanner = () => {
         zIndex: 1000,
       }}
     >
-      <p>
+      <p className='text-muted'>
         Your privacy matters to us. We use cookies to personalize content and
-        analyze our traffic. By clicking "Accept," you consent to the use of
-        cookies for these purposes. You can learn more about it by reading our
-        <a href='/privacy-policy'>Privacy Policy</a>, and you can change your
-        preferences at any time on our{' '}
-        <a href='/cookie-settings'>Cookie Settings</a> page.
+        analyze our traffic. By clicking &quot;Accept,&quot; you consent to the
+        use of cookies for these purposes. You can learn more about it by
+        reading our{' '}
+        <a href='/privacy-policy' className='text-muted'>
+          Privacy Policy
+        </a>
+        , and you can change your preferences at any time on our{' '}
+        <a href='/cookie-settings' className='text-muted'>
+          Cookie Settings
+        </a>{' '}
+        page.
       </p>
-      <button onClick={handleAccept} className='btn btn-success me-2'>
+      <button onClick={handleAccept} className='btn btn-info me-2'>
         Accept
       </button>
-      <button onClick={handleReject} className='btn btn-danger'>
+      <button onClick={handleReject} className='btn btn-dark'>
         Reject
       </button>
     </div>
